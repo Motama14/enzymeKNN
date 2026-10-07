@@ -1,0 +1,19 @@
+{
+  "fecha": "2026-10-07",
+  "representacion": "tripéptidos",
+  "k_kmero": 3,
+  "k_vecinos": 1,
+  "f1_macro_cv": 0.7824,
+  "accuracy_test": 0.8151,
+  "f1_macro_test": 0.8106,
+  "clases": {
+    "1": "1 Oxidorreductasas",
+    "2": "2 Transferasas",
+    "3": "3 Hidrolasas",
+    "4": "4 Liasas",
+    "5": "5 Isomerasas",
+    "6": "6 Ligasas",
+    "7": "7 Translocasas"
+  },
+  "n_proteinas_referencia": 10500
+}
