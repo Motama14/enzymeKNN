@@ -15,5 +15,9 @@
     "6": "6 Ligasas",
     "7": "7 Translocasas"
   },
-  "n_proteinas_referencia": 10500
+  "n_proteinas_referencia": 10500,
+  "umbrales_distancia": {
+    "alta": 0.826,
+    "media": 0.9098
+  }
 }
