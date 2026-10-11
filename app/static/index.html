@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clasificador de enzimas por secuencia</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Clasificador de enzimas por secuencia</h1>
+      <p class="sub">
+        Pega la secuencia de aminoácidos de una proteína (también vale formato
+        FASTA) y el modelo estimará su clase enzimática (primer nivel del número
+        EC)
+      </p>
+
+      <section class="tarjeta">
+        <textarea
+          id="secuencia"
+          spellcheck="false"
+          placeholder="MKTAYIAKQR... o formato FASTA"
+        ></textarea>
+        <div class="botones">
+          <button id="btn-predecir" class="principal">Clasificar</button>
+          <button id="btn-ejemplo" type="button">Cargar ejemplo</button>
+          <button id="btn-limpiar" type="button">Limpiar</button>
+          <span id="contador" class="contador"></span>
+        </div>
+      </section>
+
+      <section id="error" class="tarjeta error oculto"></section>
+
+      <section id="resultado" class="oculto">
+        <div class="tarjeta">
+          <p class="resultado-clase">
+            <span id="clase"></span
+            ><span id="confianza" class="etiqueta"></span>
+          </p>
+          <p class="nota" id="detalle"></p>
+          <div id="avisos"></div>
+        </div>
+
+        <div class="tarjeta">
+          <strong>Los 5 vecinos más cercanos</strong>
+          <p class="nota" style="margin-top: 4px">
+            La clase predicha es la del primer vecino; los demás son solo
+            informativos. Cuanto menor es la distancia coseno, más parecida es
+            la secuencia.
+          </p>
+          <div class="tabla-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>UniProt</th>
+                  <th>Proteína</th>
+                  <th>Organismo</th>
+                  <th>EC</th>
+                  <th>Clase</th>
+                  <th>Distancia</th>
+                </tr>
+              </thead>
+              <tbody id="vecinos"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <footer id="pie"></footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
