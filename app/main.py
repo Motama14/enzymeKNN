@@ -7,6 +7,7 @@ import pandas as pd
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
+from fastapi.staticfiles import StaticFiles
 
 # --------------------------------------------------------------------------- rutas
 BASE = Path(__file__).resolve().parent.parent
@@ -45,6 +46,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="Clasificador de enzimas por secuencia", version="1.0", lifespan=lifespan)
 
+app.mount("/static", StaticFiles(directory=Path(__file__).resolve().parent / "static"), name="static")
 
 # --------------------------------------------------------------------------- modelos de datos
 class Peticion(BaseModel):
