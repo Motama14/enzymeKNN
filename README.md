@@ -1,6 +1,6 @@
 <div align="center">
 
-# Clasificador de Enzimas por Secuencia
+# EnzymeKNN - Clasificador de Enzimas por Secuencia
 
 ### Pega la secuencia de una proteína y descubre a qué familia de enzimas pertenece
 
